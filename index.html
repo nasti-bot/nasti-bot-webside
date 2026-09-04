@@ -1,110 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Nasti-bot 个人作品集">
 <title>Nasti-bot</title>
+<meta name="description" content="Nasti-bot 的个人作品集，展示 AI 动画与全栈开发项目。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<div class="global-bg"><canvas id="bgCanvas"></canvas></div>
-
-<nav class="nav">
-  <a href="#" class="nav-brand">
-    <div class="nav-logo-icon">
-      <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="2" y="2" width="24" height="24" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
-        <circle cx="14" cy="14" r="5" stroke="currentColor" stroke-width="1.5" fill="none"/>
-        <line x1="14" y1="2" x2="14" y2="6" stroke="currentColor" stroke-width="1.5"/>
-        <line x1="14" y1="22" x2="14" y2="26" stroke="currentColor" stroke-width="1.5"/>
-        <line x1="2" y1="14" x2="6" y2="14" stroke="currentColor" stroke-width="1.5"/>
-        <line x1="22" y1="14" x2="26" y2="14" stroke="currentColor" stroke-width="1.5"/>
-      </svg>
-    </div>
-    <span class="nav-logo-text">Nasti-bot</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#works" class="active">Works</a></li>
-  </ul>
-</nav>
-
-<div class="scroll-indicator" id="scrollIndicator">
-  <div class="scroll-dot active" data-section="hero"></div>
-  <div class="scroll-dot" data-section="works"></div>
-  <div class="scroll-dot" data-section="contact"></div>
-</div>
-
-<!-- HERO -->
-<section class="hero" id="hero">
-  <div class="hero-canvas-layer"><canvas id="heroCanvas"></canvas></div>
-  <div class="hero-center">
-    <div class="hero-graphic"><canvas id="heroGraphic"></canvas></div>
-    <div class="hero-eyebrow">Design &amp; Development</div>
-    <p class="hero-tagline">CREATING DIGITAL EXPERIENCES</p>
-  </div>
-</section>
-
-<!-- WORKS -->
-<section class="section works-section" id="works">
-  <div class="container">
-    <div class="section-label">Works</div>
-    <h2 class="section-heading">作品<span class="accent">展示</span></h2>
-
-    <div class="entry-cards">
-      <!-- 项目 -->
-      <a href="#" class="entry-card">
-        <div class="entry-card-visual">
-          <canvas id="entryCanvas1"></canvas>
-          <div class="entry-card-overlay"><span class="entry-card-arrow">进入 →</span></div>
-        </div>
-        <div class="entry-card-body">
-          <div class="entry-card-label">Web / App / System</div>
-          <h3 class="entry-card-title">项目</h3>
-          <p class="entry-card-desc">全栈开发项目集合，涵盖 Web 应用、移动端、数据可视化及后台系统。</p>
-          <div class="entry-card-tags"><span>React</span><span>Vue</span><span>Go</span><span>Python</span><span>Node.js</span></div>
-        </div>
-      </a>
-
-      <!-- AI动画作品 -->
-      <a href="works-ai.html" class="entry-card">
-        <div class="entry-card-visual">
-          <canvas id="entryCanvas2"></canvas>
-          <div class="entry-card-overlay"><span class="entry-card-arrow">进入 →</span></div>
-        </div>
-        <div class="entry-card-body">
-          <div class="entry-card-label">AI Animation</div>
-          <h3 class="entry-card-title">AI 动画作品</h3>
-          <p class="entry-card-desc">由 Stable Diffusion、ControlNet、Runway 等 AI 工具驱动的动画创作。</p>
-          <div class="entry-card-tags"><span>Stable Diffusion</span><span>ControlNet</span><span>Deforum</span><span>Runway Gen-3</span></div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section contact-section" id="contact">
-  <div class="container">
-    <div class="section-label">Contact</div>
-    <h2 class="section-heading" style="margin-bottom:24px">联系方式</h2>
-    <div class="contact-links">
-      <a href="mailto:hello@example.com" class="contact-link"><span class="clabel">邮箱</span><span class="cvalue">ydcbgxg8tfvy6@gmail.com</span></a>
-      <a href="https://github.com" target="_blank" rel="noopener" class="contact-link"><span class="clabel">GitHub</span><span class="cvalue">github.com/nasti-bot</span></a>
-      <a href="#" class="contact-link"><span class="clabel">微信</span><span class="cvalue">ivan615930</span></a>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <span>© 2026 Nasti-bot</span>
-  <span>Built with precision</span>
-</footer>
-
-<script src="script.js"></script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
