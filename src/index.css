@@ -162,10 +162,14 @@ body {
   position: absolute; inset: 0; z-index: 1;
   background: linear-gradient(to top, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.75) 18%, rgba(255, 255, 255, 0) 45%);
   pointer-events: none;
+  opacity: var(--hero-fade, 1);
 }
 .hero-canvas { position: absolute; inset: 0; z-index: 0; }
 .hero-canvas canvas { width: 100%; height: 100%; display: block; }
-.hero-center { position: relative; z-index: 2; text-align: center; padding: 0 24px 120px; }
+.hero-center {
+  position: relative; z-index: 2; text-align: center; padding: 0 24px 120px;
+  opacity: var(--hero-fade, 1);
+}
 .hero-welcome {
   font-family: var(--font-display); font-weight: 700;
   font-size: clamp(56px, 9vw, 110px);
@@ -197,6 +201,7 @@ body {
 .hero-scroll-hint {
   position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
   z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 8px;
+  opacity: var(--hero-fade, 1);
 }
 .hero-scroll-hint span {
   font-family: var(--font-mono); font-size: 10px;
