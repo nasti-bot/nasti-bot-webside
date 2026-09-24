@@ -14,7 +14,8 @@ export const site = {
   // 右上角菜单项
   menu: [
     { id: 'home', label: '首页' },
-    { id: 'works', label: '作品' },
+    { id: 'design', label: '平面设计' },
+    { id: 'works', label: 'AI动画' },
     { id: 'contact', label: '联系' },
   ],
 
@@ -24,11 +25,27 @@ export const site = {
     tagline: 'CREATING DIGITAL EXPERIENCES',
   },
 
+  // 平面设计作品集
+  design: {
+    label: 'Graphic Design',
+    heading: '平面设计',
+    headingAccent: '作品集',
+    items: [
+      {
+        id: 1,
+        title: '荆棘冠',
+        desc: '以荆棘冠为意象的平面设计作品，探索神圣与痛楚之间的视觉张力。',
+        tags: ['平面设计', '视觉设计'],
+        image: '作品/荆棘冠.png',
+      },
+    ],
+  },
+
   // 作品展示区
   works: {
     label: 'Gallery',
-    heading: '作品',
-    headingAccent: '展示',
+    heading: 'AI动画',
+    headingAccent: '作品',
     items: [
       {
         id: 1,
@@ -36,18 +53,6 @@ export const site = {
         desc: '以花朵与人物交织的 AI 动画短片，探索自然与意识之间的诗意联结。',
         tags: ['Stable Diffusion', 'ControlNet', 'Deforum', 'After Effects'],
         image: '背景图/海报主体.png',
-      },
-      {
-        id: 2,
-        title: '哥特回廊',
-        desc: '以哥特式尖拱与彩色玻璃为灵感的 AI 生成动画，营造神圣而幽邃的视觉叙事。',
-        tags: ['Stable Diffusion', 'ComfyUI', 'DaVinci Resolve'],
-      },
-      {
-        id: 3,
-        title: '玫瑰之窗',
-        desc: '向中世纪玫瑰花窗致敬的 AI 动画，几何放射与彩窗透光交织出神圣几何。',
-        tags: ['Runway Gen-3', 'ComfyUI', 'After Effects'],
       },
     ],
   },

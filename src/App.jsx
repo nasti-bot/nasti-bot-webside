@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import LoadingScreen from './components/LoadingScreen.jsx';
 import MenuOverlay from './components/MenuOverlay.jsx';
 import HomePage from './components/HomePage.jsx';
+import DesignPage from './components/DesignPage.jsx';
 import WorksPage from './components/WorksPage.jsx';
 
 export default function App() {
@@ -20,6 +21,11 @@ export default function App() {
 
   return (
     <div className="app">
+      {/* 全局背景图 */}
+      <div className="global-bg" aria-hidden="true">
+        <img src="作品/荆棘冠.png" alt="" />
+      </div>
+
       {loading && <LoadingScreen onDone={handleLoadingDone} />}
 
       <MenuOverlay
@@ -29,6 +35,7 @@ export default function App() {
       />
 
       <HomePage />
+      <DesignPage />
       <WorksPage />
     </div>
   );
