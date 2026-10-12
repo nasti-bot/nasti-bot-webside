@@ -34,9 +34,16 @@ export const site = {
       {
         id: 1,
         title: '荆棘冠',
-        desc: '以荆棘冠为意象的平面设计作品，探索神圣与痛楚之间的视觉张力。',
+        desc: 'From the drooping head of flesh and blood, the crown of the thorns is lifted high.',
         tags: ['平面设计', '视觉设计'],
         image: '作品/荆棘冠.png',
+      },
+      {
+        id: 2,
+        title: '蜕凡思',
+        desc: 'Shedding the mortal shell, its thoughts brim with vitality.',
+        tags: ['平面设计', '视觉设计'],
+        image: '作品/蜕凡思.png',
       },
     ],
   },
