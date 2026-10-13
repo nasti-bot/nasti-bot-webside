@@ -158,56 +158,36 @@ body {
 /* ============================================================= */
 .hero {
   position: relative; min-height: 100vh;
-  display: flex; align-items: flex-end; justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   overflow: hidden;
-  background: rgba(247, 245, 242, 0.2);
 }
-/* 底部白色渐变遮罩：从下往上白→透明，让底部的字在背景图上清晰可见 */
-.hero::before {
-  content: '';
+/* 动态覆盖层：随滚动渐显；透明度+模糊与下面内容区完全一致，无色差 */
+.hero-white {
   position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.75) 18%, rgba(255, 255, 255, 0) 45%);
+  background: rgba(247, 245, 242, 0.82);
+  opacity: var(--hero-cover, 0);
   pointer-events: none;
-  opacity: var(--hero-fade, 1);
+  transition: opacity 0.15s ease-out;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
-.hero-canvas { position: absolute; inset: 0; z-index: 0; }
-.hero-canvas canvas { width: 100%; height: 100%; display: block; }
+/* 欢迎图片层：居中显示 */
 .hero-center {
-  position: relative; z-index: 2; text-align: center; padding: 0 24px 120px;
-  opacity: var(--hero-fade, 1);
+  position: relative; z-index: 2; text-align: center;
+  padding: 0 24px;
+  margin-top: 380px;   /* 负数=往上挪，正数=往下挪 */
 }
-.hero-welcome {
-  font-family: var(--font-display); font-weight: 700;
-  font-size: clamp(56px, 9vw, 110px);
-  line-height: 1; letter-spacing: 0.06em;
-  margin-bottom: 20px;
-  /* 墨蓝 → 青色渐变，明亮醒目 */
-  background: linear-gradient(180deg, #3b6ea5 0%, #2eaadc 45%, #5cc8f0 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-.hero-eyebrow {
-  font-family: var(--font-display); font-weight: 600; font-size: 12px;
-  letter-spacing: 0.3em; color: var(--accent-dim); margin-bottom: 16px;
-  display: inline-flex; align-items: center; gap: 16px;
-}
-.hero-eyebrow::before, .hero-eyebrow::after {
-  content: ''; display: block; width: 28px; height: 1px;
-  background: var(--accent); opacity: 0.5;
-}
-.hero-tagline {
-  font-family: var(--font-display); font-weight: 300;
-  font-size: clamp(12px, 1.8vw, 16px);
-  letter-spacing: 0.18em; color: var(--text-secondary);
+.hero-true-welcome-img {
+  height: 550px;
+  display: block;
+  margin: 0 auto;
 }
 
-/* 滚动提示 */
+/* 滚动提示：固定在视口底部，滚动一点即快速消失 */
 .hero-scroll-hint {
-  position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+  position: fixed; bottom: 36px; left: 50%; transform: translateX(-50%);
   z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 8px;
-  opacity: var(--hero-fade, 1);
+  opacity: var(--hint-opacity, 1);
 }
 .hero-scroll-hint span {
   font-family: var(--font-mono); font-size: 10px;
