@@ -30,20 +30,24 @@ export const site = {
     label: 'Graphic Design',
     heading: '平面设计',
     headingAccent: '作品集',
+    // 背景图：目前只用蜕凡思
+    background: '作品/bg-蜕凡思.jpg',
     items: [
       {
         id: 1,
         title: '荆棘冠',
         desc: 'From the drooping head of flesh and blood, the crown of the thorns is lifted high.',
         tags: ['平面设计', '视觉设计'],
-        image: '作品/荆棘冠.png',
+        image: '作品/thumb-荆棘冠.jpg',   // 小窗缩略图（无文字版）
+        full: '作品/full-荆棘冠.jpg',      // 点开预览的全图（作品名版）
       },
       {
         id: 2,
         title: '蜕凡思',
         desc: 'Shedding the mortal shell, its thoughts brim with vitality.',
         tags: ['平面设计', '视觉设计'],
-        image: '作品/蜕凡思.png',
+        image: '作品/thumb-蜕凡思.jpg',   // 小窗缩略图（无文字版）
+        full: '作品/full-蜕凡思.jpg',      // 点开预览的全图（作品名版）
       },
     ],
   },
@@ -59,7 +63,7 @@ export const site = {
         title: 'The Flowers of Abigail',
         desc: '以花朵与人物交织的 AI 动画短片，探索自然与意识之间的诗意联结。',
         tags: ['Stable Diffusion', 'ControlNet', 'Deforum', 'After Effects'],
-        image: '背景图/海报主体.png',
+        image: '作品/thumb-abigail.jpg',
       },
     ],
   },

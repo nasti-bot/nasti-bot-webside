@@ -1,8 +1,19 @@
+import { useState, useCallback } from 'react';
 import { site } from '../data/site.js';
+import Lightbox from './Lightbox.jsx';
 
-// 平面设计作品集
+// 平面设计作品集：点击卡片打开全图预览（放大/缩小/全屏/左右切换）
 export default function DesignPage() {
   const { design } = site;
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+
+  const openLightbox = useCallback((i) => setLightboxIndex(i), []);
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+  const navigate = useCallback((i) => {
+    // 循环或边界处理：超出范围就关闭
+    if (i < 0 || i >= design.items.length) return;
+    setLightboxIndex(i);
+  }, [design.items.length]);
 
   return (
     <section className="section works-section" id="design">
@@ -13,7 +24,7 @@ export default function DesignPage() {
         <div className="masonry-grid">
           {design.items.map((w, i) => (
             <div className="masonry-item" key={w.id}>
-              <div className="gallery-card">
+              <div className="gallery-card" onClick={() => openLightbox(i)}>
                 <div className="gallery-media">
                   {w.image ? (
                     <img className="gallery-image" src={w.image} alt={w.title} />
@@ -37,6 +48,15 @@ export default function DesignPage() {
           ))}
         </div>
       </div>
+
+      {lightboxIndex !== null && (
+        <Lightbox
+          items={design.items}
+          index={lightboxIndex}
+          onClose={closeLightbox}
+          onNavigate={navigate}
+        />
+      )}
     </section>
   );
 }
